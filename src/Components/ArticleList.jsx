@@ -1,17 +1,22 @@
 import './Component-Style/ArticleList.css'
 import { useEffect, useState } from 'react';
 import { fetchAllArticles } from '../api';
+import TopicBar from './TopicBar';
+import TopicDropdown from './TopicDropdown';
 
 const ArticleList = () => {
     const [allArticleData, setAllArticleData] = useState([]);
+    const [currentTopic, setCurrentTopic] = useState("Showing all topics");
 
     useEffect(() => {
         fetchAllArticles().then(({data}) => {
-            console.log(data.articles);
             setAllArticleData(data.articles);
         })
     }, [])
-    return <ul>
+    return <>
+        <TopicBar currentTopic={currentTopic}/>
+        <TopicDropdown setCurrentTopic={setCurrentTopic}/>
+        <ul>
         {allArticleData.map((article) => {
             return (
                 <li key={article.article_id}>
@@ -21,15 +26,13 @@ const ArticleList = () => {
                     <div className ="articleCreated">Created: {article.created_at}</div>
                     <div className ="articleTopic">Topic: {article.topic}</div>
                     <div className ="articleVotes">Votes: {article.votes}</div>
-            
-
-
                     
                     </li>
             )
         })}
         ArticleList
     </ul>
+    </>
 };
 
 export default ArticleList;

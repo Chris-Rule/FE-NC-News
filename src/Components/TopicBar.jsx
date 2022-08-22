@@ -1,8 +1,13 @@
 import './Component-Style/TopicBar.css'
 
-const TopicBar = () => {
-    return <section>
-        TopicBar
+const TopicBar = ({currentTopic}) => {
+    return <section className='TopicBar'>
+        <h2>
+        {currentTopic} 
+        </h2>
+        <div className='changeTopic'>
+            Change<br/>Topic
+        </div>
     </section>
 };
 

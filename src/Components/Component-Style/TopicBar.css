@@ -1,0 +1,17 @@
+.TopicBar {
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: row;
+    padding-left: 1em; 
+    justify-content: space-between;
+}
+
+.TopicBar .changeTopic{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    border: 2px solid red;
+}

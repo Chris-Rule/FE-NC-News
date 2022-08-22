@@ -8,4 +8,12 @@ const fetchAllArticles = () => {
     })
 }
 
-export { fetchAllArticles };
+const fetchAllTopics = () => {
+    return axios.get('https://cr-nc-news.herokuapp.com/api/topics').then((res)=>{
+        return res;
+    }).catch((err) => {
+        console.log(err);
+    })
+}
+
+export { fetchAllArticles, fetchAllTopics };
