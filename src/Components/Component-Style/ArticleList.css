@@ -1,0 +1,27 @@
+ul {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    list-style-type: none;
+    padding: 1em;
+    margin: 0;
+}
+
+li {
+    border: 2px solid red;
+    display: grid;
+    gap: 0.5em;
+    grid-template-areas: 
+    'articleTitle articleTitle articleTitle'
+    'articleAuthor articleTopic articleVotes'
+    'articleCreated articleCreated articleCommentCount'
+    ;
+}
+
+.articleTitle { grid-area: articleTitle; }
+.articleAuthor { grid-area: articleAuthor;}
+.articleCommentCount {grid-area: articleCommentCount;}
+.articleCreated{ grid-area: articleCreated;}
+.articleTopic{ grid-area: articleTopic};
+.articleVotes{ grid-area:articleVotes;}

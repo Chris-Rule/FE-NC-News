@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import ArticleList from './Components/ArticleList';
+import Explore from './Components/Explore';
+import HeaderBar from './Components/HeaderBar';
+import MenuDisplay from './Components/MenuDisplay';
+import TopicBar from './Components/TopicBar';
+import TopicDropdown from './Components/TopicDropdown';
+import UserDropdown from './Components/UserDropdown';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HeaderBar/>
+      <UserDropdown/>
+      <MenuDisplay/>
+      <TopicBar/>
+      <TopicDropdown/>
+      <div className='pageContainer'>
+        {/* Routing here */}
+        <ArticleList/>
+      </div>
+      <Explore/>
     </div>
   );
 }
