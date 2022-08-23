@@ -1,26 +1,23 @@
 import './App.css';
-import ArticleList from './Components/ArticleList';
+import ArticleList from './Components/ViewBox';
 import Explore from './Components/Explore';
 import HeaderBar from './Components/HeaderBar';
 import MenuDisplay from './Components/MenuDisplay';
-import TopicBar from './Components/TopicBar';
-import TopicDropdown from './Components/TopicDropdown';
 import UserDropdown from './Components/UserDropdown';
+import { BrowserRouter} from 'react-router-dom';
+import ViewBox from './Components/ViewBox';
 
 function App() {
   return (
-    <div className="App">
-      <HeaderBar/>
-      <UserDropdown/>
-      <MenuDisplay/>
-      <TopicBar/>
-      <TopicDropdown/>
-      <div className='pageContainer'>
-        {/* Routing here */}
-        <ArticleList/>
+    <BrowserRouter>
+      <div className="App">
+        <HeaderBar/>
+        <UserDropdown/>
+        <MenuDisplay/>
+        <ViewBox/>
+        <Explore/>
       </div>
-      <Explore/>
-    </div>
+    </BrowserRouter>
   );
 }
 
