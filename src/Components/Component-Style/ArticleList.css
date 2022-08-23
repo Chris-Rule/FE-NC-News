@@ -4,11 +4,12 @@ ul {
     justify-content: center;
     align-content: center;
     list-style-type: none;
-    padding: 1em;
-    margin: 0;
+    list-style: none;
+    width: 90vw;
+    padding: 0%;
 }
 
-li {
+.articlePanel {
     border: 2px solid red;
     display: grid;
     gap: 0.5em;

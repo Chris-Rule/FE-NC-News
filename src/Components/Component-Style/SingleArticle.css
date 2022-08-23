@@ -1,0 +1,28 @@
+.articleBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 90vw;
+    padding: 0%;
+}
+
+.articleAuthor { 
+    text-align: start;
+    text-transform: capitalize;
+}
+
+.articleBody {
+    text-align: start;
+}
+
+.articleFooterData {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-around;
+}
+.articleCommentCount {grid-area: articleCommentCount;}
+.articleCreated{ grid-area: articleCreated;}
+.articleTopic{ grid-area: articleTopic};
+.articleVotes{ grid-area:articleVotes;}

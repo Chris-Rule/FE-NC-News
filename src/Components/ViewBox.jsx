@@ -5,35 +5,37 @@ import TopicDropdown from './TopicDropdown';
 import ArticleList from './ArticleList';
 import { Routes, Route } from 'react-router-dom'
 import { fetchAllTopics } from '../api';
+import SingleArticle from './SingleArticle';
 
 
 const ViewBox = () => {
     const [topic, setTopic] = useState("Showing all topics");
     const [topicData, setTopicData] = useState([]);
-    const [dropDownVisible, setDropDownVisible] = useState(false);
+    const [topicDDVisible, setTopicDDVisible] = useState(false);
 
     useEffect(() => {
         fetchAllTopics().then(({data}) => {
             setTopicData(data.topics);
         })
-    }, [topic,dropDownVisible])
+    }, [topic,topicDDVisible])
 
     return <>
         <TopicBar   topic={topic} 
-                    dropDownVisible={dropDownVisible}
-                    setDropDownVisible={setDropDownVisible}
+                    topicDDVisible={topicDDVisible}
+                    setTopicDDVisible={setTopicDDVisible}
                     />
-        {dropDownVisible ? 
+        {topicDDVisible ? 
             <TopicDropdown 
-            setDropDownVisible={setDropDownVisible}
-            dropDownVisible={dropDownVisible}
+            setTopicDDVisible={setTopicDDVisible}
+            topicDDVisible={topicDDVisible}
             setTopic={setTopic}
             topicData={topicData}/>
                 :null
         }
         <Routes>
-          <Route path="/" element={<ArticleList topic='Showing all topics'/>}/>
-          {topicData.map((topic) => {
+            <Route path="/articles/:article_id" element={<SingleArticle setTopic={setTopic}/>}></Route>
+            <Route path="/" element={<ArticleList topic='Showing all topics'/>}/>
+            {topicData.map((topic) => {
             return (
                     <Route key={`/${topic.slug}`} path={`/${topic.slug}`} element={<ArticleList topic={topic.slug}/>}/>    
             )
