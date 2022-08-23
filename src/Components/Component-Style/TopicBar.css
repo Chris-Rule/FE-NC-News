@@ -1,13 +1,23 @@
 .TopicBar {
     border: 2px solid blue;
+    text-transform: capitalize;
     display: flex;
     flex-direction: row;
-    width: 90vw;
+    width: 89.5vw;
     justify-content: space-between;
+}
+
+h2 {
+    display: block;
+    font-size: 1.2rem;
+    margin: 0.5rem;
+    margin-left: 1rem;
+    padding: 0;
 }
 
 .TopicBar .changeTopic{
     display: flex;
+    padding: 0.5rem;
     text-align: center;
     justify-content: center;
     align-content: center;

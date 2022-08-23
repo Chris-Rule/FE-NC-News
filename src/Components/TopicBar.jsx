@@ -13,7 +13,7 @@ const TopicBar = ({topic,topicDDVisible, setTopicDDVisible}) => {
         {topic} 
         </h2>
         <div className='changeTopic' onClick={handleClick}>
-            {topicDDVisible ? "Close" : "Change Topic"}
+            {topicDDVisible ? "Close" : "New Topic"}
         </div>
     </section>
 };

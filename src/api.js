@@ -8,6 +8,14 @@ const fetchAllArticles = (topic) => {
     })
 }
 
+const fetchArticleByID = (article_id) => {
+    return axios.get(`https://cr-nc-news.herokuapp.com/api/articles/${article_id}`).then((res)=>{
+        return res;
+    }).catch((err) => {
+        console.log(err);
+    })
+}
+
 const fetchAllTopics = () => {
     return axios.get('https://cr-nc-news.herokuapp.com/api/topics').then((res)=>{
         return res;
@@ -16,4 +24,4 @@ const fetchAllTopics = () => {
     })
 }
 
-export { fetchAllArticles, fetchAllTopics };
+export { fetchAllArticles, fetchAllTopics, fetchArticleByID };

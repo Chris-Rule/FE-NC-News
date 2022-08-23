@@ -5,6 +5,7 @@ import TopicDropdown from './TopicDropdown';
 import ArticleList from './ArticleList';
 import { Routes, Route } from 'react-router-dom'
 import { fetchAllTopics } from '../api';
+import SingleArticle from './SingleArticle';
 
 
 const ViewBox = () => {
@@ -32,8 +33,9 @@ const ViewBox = () => {
                 :null
         }
         <Routes>
-          <Route path="/" element={<ArticleList topic='Showing all topics'/>}/>
-          {topicData.map((topic) => {
+            <Route path="/articles/:article_id" element={<SingleArticle setTopic={setTopic}/>}></Route>
+            <Route path="/" element={<ArticleList topic='Showing all topics'/>}/>
+            {topicData.map((topic) => {
             return (
                     <Route key={`/${topic.slug}`} path={`/${topic.slug}`} element={<ArticleList topic={topic.slug}/>}/>    
             )
