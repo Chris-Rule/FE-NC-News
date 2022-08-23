@@ -1,9 +1,8 @@
 import './App.css';
-import ArticleList from './Components/ViewBox';
 import Explore from './Components/Explore';
 import HeaderBar from './Components/HeaderBar';
 import MenuDisplay from './Components/MenuDisplay';
-import UserDropdown from './Components/UserDropdown';
+import LoginDropdown from './Components/LoginDropdown';
 import { BrowserRouter} from 'react-router-dom';
 import ViewBox from './Components/ViewBox';
 
@@ -12,7 +11,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <HeaderBar/>
-        <UserDropdown/>
+        <LoginDropdown/>
         <MenuDisplay/>
         <ViewBox/>
         <Explore/>

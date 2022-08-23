@@ -1,10 +1,9 @@
 import './Component-Style/TopicBar.css'
 
-const TopicBar = ({topic,dropDownVisible, setDropDownVisible}) => {
+const TopicBar = ({topic,topicDDVisible, setTopicDDVisible}) => {
 
     const handleClick = () => {
-        console.log(dropDownVisible);
-        setDropDownVisible((value)=>{
+        setTopicDDVisible((value)=>{
             return value ? false : true;
         });
     }
@@ -14,7 +13,7 @@ const TopicBar = ({topic,dropDownVisible, setDropDownVisible}) => {
         {topic} 
         </h2>
         <div className='changeTopic' onClick={handleClick}>
-            {dropDownVisible ? "Close" : "Change Topic"}
+            {topicDDVisible ? "Close" : "Change Topic"}
         </div>
     </section>
 };
