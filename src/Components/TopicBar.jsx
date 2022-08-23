@@ -1,9 +1,11 @@
+
+import { useParams,useSearchParams } from 'react-router-dom';
 import './Component-Style/TopicBar.css'
 
-const TopicBar = ({currentTopic}) => {
+const TopicBar = ({topic}) => {
     return <section className='TopicBar'>
         <h2>
-        {currentTopic} 
+        {topic} 
         </h2>
         <div className='changeTopic'>
             Change<br/>Topic
