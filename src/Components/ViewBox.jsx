@@ -10,16 +10,27 @@ import { fetchAllTopics } from '../api';
 const ViewBox = () => {
     const [topic, setTopic] = useState("Showing all topics");
     const [topicData, setTopicData] = useState([]);
+    const [dropDownVisible, setDropDownVisible] = useState(false);
 
     useEffect(() => {
         fetchAllTopics().then(({data}) => {
             setTopicData(data.topics);
         })
-    }, [topic])
+    }, [topic,dropDownVisible])
 
     return <>
-        <TopicBar topic={topic}/>
-        <TopicDropdown setTopic={setTopic} topicData={topicData}/>
+        <TopicBar   topic={topic} 
+                    dropDownVisible={dropDownVisible}
+                    setDropDownVisible={setDropDownVisible}
+                    />
+        {dropDownVisible ? 
+            <TopicDropdown 
+            setDropDownVisible={setDropDownVisible}
+            dropDownVisible={dropDownVisible}
+            setTopic={setTopic}
+            topicData={topicData}/>
+                :null
+        }
         <Routes>
           <Route path="/" element={<ArticleList topic='Showing all topics'/>}/>
           {topicData.map((topic) => {

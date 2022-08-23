@@ -1,14 +1,20 @@
-
-import { useParams,useSearchParams } from 'react-router-dom';
 import './Component-Style/TopicBar.css'
 
-const TopicBar = ({topic}) => {
+const TopicBar = ({topic,dropDownVisible, setDropDownVisible}) => {
+
+    const handleClick = () => {
+        console.log(dropDownVisible);
+        setDropDownVisible((value)=>{
+            return value ? false : true;
+        });
+    }
+
     return <section className='TopicBar'>
         <h2>
         {topic} 
         </h2>
-        <div className='changeTopic'>
-            Change<br/>Topic
+        <div className='changeTopic' onClick={handleClick}>
+            {dropDownVisible ? "Close" : "Change Topic"}
         </div>
     </section>
 };

@@ -1,9 +1,13 @@
-import { fetchAllTopics } from '../api';
+
 import './Component-Style/TopicDropdown.css'
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const TopicDropdown = ({setTopic, topicData}) => {
+const TopicDropdown = ({setTopic, topicData, setDropDownVisible}) => {
+
+    const handleClick = (topic) => {
+        setTopic(topic.slug);
+        setDropDownVisible(false);
+    }
 
     return <>
         <ul>
@@ -11,7 +15,7 @@ const TopicDropdown = ({setTopic, topicData}) => {
         {topicData.map((topic) => {
             return (
                 <li key={topic.slug}>
-                    <Link to={`${topic.slug}`} onClick={() => {setTopic(topic.slug)}}>{topic.slug}</Link>
+                    <Link to={`${topic.slug}`} onClick={() => {handleClick(topic)}}>{topic.slug}</Link>
                     </li>
             )
         })}
