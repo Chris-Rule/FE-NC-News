@@ -1,12 +1,13 @@
 .votes {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .votes div {
     display: flex;
+    flex-direction: row;
     align-items: center;
     padding-right: 0.5rem;
 }

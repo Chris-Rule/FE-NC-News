@@ -26,10 +26,10 @@ const ArticleList = ({topic}) => {
             return (<section key={article.article_id} className='articlePanel'>
                  
                  <Link to={`/articles/${article.article_id}`}className ="articleTitle">{article.title}</Link>
-                    <div className ="articleAuthor">By {article.author}</div>
-                    <div className ="articleCommentCount">Comments: {article.comment_count}</div>
-                    <div className ="articleCreated">Created: {date}</div>
-                    <div className ="articleTopic">Topic: {article.topic}</div>
+                    <p className ="articleAuthor">By {article.author}</p>
+                    <p className ="articleCommentCount">Comments: {article.comment_count}</p>
+                    <p className ="articleCreated">Created: {date}</p>
+                    <p className ="articleTopic">Topic: {article.topic}</p>
                     <Votes className ="articleVotes" article_id= {article.article_id} votes = {article.votes} /> 
                 </section>
             )

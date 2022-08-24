@@ -24,28 +24,15 @@ const fetchAllTopics = () => {
     })
 }
 
-const sendUpVote = (article_id, votes) => {
+const updateVotes = (article_id, votes) => {
     return axios.patch(`https://cr-nc-news.herokuapp.com/api/articles/${article_id}`,
     {
         inc_votes: votes
     }
     ).then((res)=>{
         return res;
-    }).catch((err) => {
-        console.log(err);
     })
 };
 
-const sendDownVote = (article_id, votes) => {
-    return axios.patch(`https://cr-nc-news.herokuapp.com/api/articles/${article_id}`,
-    {
-        inc_votes: votes
-    }
-    ).then((res)=>{
-        return res;
-    }).catch((err) => {
-        console.log(err);
-    })
-};
 
-export { fetchAllArticles, fetchAllTopics, fetchArticleByID, sendUpVote, sendDownVote };
+export { fetchAllArticles, fetchAllTopics, fetchArticleByID, updateVotes };
