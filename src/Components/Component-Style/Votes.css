@@ -1,0 +1,24 @@
+.votes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.votes div {
+    display: flex;
+    align-items: center;
+    padding-right: 0.5rem;
+}
+
+.upvote {
+    display: flex;
+    align-items: center;
+    fill:green;
+}
+
+.downvote {
+    display: flex;
+    align-content: center;
+    fill: red;
+}
