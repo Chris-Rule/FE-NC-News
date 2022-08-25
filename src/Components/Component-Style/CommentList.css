@@ -1,0 +1,26 @@
+.commentPanel {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid red;
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.commentHeaders {
+    display: flex;
+    flex-direction: row;
+    text-transform: capitalize;
+    justify-content: space-between;
+}
+
+.commentBody {
+    margin: 0;
+    display: block;
+    text-align: start;
+}
+
+.commentVotes {
+    display:flex;
+    justify-content: end;
+}

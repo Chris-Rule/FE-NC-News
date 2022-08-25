@@ -1,25 +1,23 @@
 import './Component-Style/CommentList.css'
 import { useEffect, useState } from 'react';
 import { fetchCommentsByArticleID } from '../api';
-import dayjs from 'dayjs';
+import SingleComment from './SingleComment';
 
 const CommentList = ({article_id}) => {
     const [commentList, setCommentList] = useState([]);
 
     useEffect(()=>{
             fetchCommentsByArticleID(article_id).then(({data}) => {
-                console.log(data.comments);
                 setCommentList(data.comments);
             })
     }, []);
+
+    const limitThreshold = 100;
+    const limitLength = 75;
+
     return <ul>
     {commentList.map((comment) => {
-        const date = dayjs(comment.created_at).format('YYYY-MM-DD HH:ss')
-        return (<section key={comment.comment_id} className='articlePanel'>
-             {comment.author}
-                
-            </section>
-        )
+        return <SingleComment comment={comment} limitLength={limitLength} limitThreshold={limitThreshold}/>
     })}
 </ul>
 };
