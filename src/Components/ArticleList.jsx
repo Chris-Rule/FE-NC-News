@@ -2,6 +2,7 @@ import './Component-Style/ArticleList.css'
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchAllArticles } from '../api';
+import Votes from './Votes';
 import dayjs from 'dayjs';
 
 
@@ -22,15 +23,15 @@ const ArticleList = ({topic}) => {
         <ul>
         {allArticleData.map((article) => {
             const date = dayjs(article.created_at).format('YYYY-MM-DD HH:ss')
-            return (
-                <Link key={article.article_id} to={`/articles/${article.article_id}`} className='articlePanel'>
-                    <h3 className ="articleTitle">{article.title}</h3>
-                    <div className ="articleAuthor">Author: {article.author}</div>
-                    <div className ="articleCommentCount">Comment count: {article.comment_count}</div>
-                    <div className ="articleCreated">Created: {date}</div>
-                    <div className ="articleTopic">Topic: {article.topic}</div>
-                    <div className ="articleVotes">Votes: {article.votes}</div>
-                </Link>
+            return (<section key={article.article_id} className='articlePanel'>
+                 
+                 <Link to={`/articles/${article.article_id}`}className ="articleTitle">{article.title}</Link>
+                    <p className ="articleAuthor">By {article.author}</p>
+                    <p className ="articleCommentCount">Comments: {article.comment_count}</p>
+                    <p className ="articleCreated">Created: {date}</p>
+                    <p className ="articleTopic">Topic: {article.topic}</p>
+                    <Votes className ="articleVotes" article_id= {article.article_id} votes = {article.votes} /> 
+                </section>
             )
         })}
     </ul>

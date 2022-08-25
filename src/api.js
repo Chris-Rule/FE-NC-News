@@ -24,4 +24,15 @@ const fetchAllTopics = () => {
     })
 }
 
-export { fetchAllArticles, fetchAllTopics, fetchArticleByID };
+const updateVotes = (article_id, votes) => {
+    return axios.patch(`https://cr-nc-news.herokuapp.com/api/articles/${article_id}`,
+    {
+        inc_votes: votes
+    }
+    ).then((res)=>{
+        return res;
+    })
+};
+
+
+export { fetchAllArticles, fetchAllTopics, fetchArticleByID, updateVotes };

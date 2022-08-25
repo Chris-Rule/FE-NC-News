@@ -12,9 +12,7 @@ const SingleArticle = ({setTopic}) => {
     useEffect(() => {
         fetchArticleByID(article_id).then(({data}) => {
             setTopic(data.article.topic);
-            setArticleData(() => {
-                return data.article;
-            });
+            setArticleData(data.article);
         })
     },[])
 
@@ -25,7 +23,7 @@ const SingleArticle = ({setTopic}) => {
             <p className='articleBody'>{articleData.body}</p>
         <section className = "articleFooterData">
             <div className ="articleCommentCount">Comment count: {articleData.comment_count}</div>
-            <Votes votes = {articleData.votes}/>
+            <Votes article_id= {articleData.article_id} votes = {articleData.votes} />  
         </section>           
     </section>
 };
