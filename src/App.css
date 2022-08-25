@@ -6,6 +6,8 @@
   justify-items: center;
   align-items: center;
   align-content: center;
+  background-image: linear-gradient(to bottom right,rgb(7, 65, 142), rgb(9, 9, 90),black);
+  color: white;
 }
 
 .pageContainer{
