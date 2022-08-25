@@ -24,8 +24,6 @@ const Votes = ({article_id, votes}) => {
         </div>
         {err ? <p className='votingError'>{err}</p> : null}
     </section>
-        
-    
 };
 
 export default Votes;

@@ -4,9 +4,11 @@ import { useEffect, useState } from 'react';
 import { fetchArticleByID } from '../api';
 import Votes from './Votes';
 import CommentList from './CommentList';
+import PostCommentWindow from './PostCommentWindow';
 
 const SingleArticle = ({setTopic}) => {
     const [articleData, setArticleData] = useState([]);
+    const [postWindowVis, setPostWindowVis] = useState(false);
     const {article_id} = useParams();
 
 
@@ -17,15 +19,24 @@ const SingleArticle = ({setTopic}) => {
         })
     },[])
 
+    const handleClick = () => {
+        setPostWindowVis(!postWindowVis)
+    }
+    
 
     return <section className='articleBox'>
         <h3 className ="articleTitle">{articleData.title}</h3>
             <div className ="articleAuthor">By {articleData.author}</div>
             <p className='articleBody'>{articleData.body}</p>
         <section className = "articleFooterData">
-            <div className ="articleCommentCount">Comment count: {articleData.comment_count}</div>
+            <div className ="articleCommentCount">
+               <p>Comments: {articleData.comment_count}</p>
+                <button className ='postCommentButton' onClick={() => handleClick()}>Comment</button>
+            </div>
             <Votes article_id= {articleData.article_id} votes = {articleData.votes} />  
-        </section>   
+        </section>
+        {postWindowVis ?   
+        <PostCommentWindow/>: null}
         <CommentList article_id={article_id}/>     
     </section>
 };

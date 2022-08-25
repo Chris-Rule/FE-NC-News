@@ -1,0 +1,9 @@
+.commentInputForm {
+    display: flex;
+    justify-content: center;
+}
+
+.commentInput {
+    width: 60vw;
+    height: 10vw;
+}
