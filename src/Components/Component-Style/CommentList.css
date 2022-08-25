@@ -5,6 +5,7 @@
     margin-top: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    width: 80vw;
 }
 
 .commentHeaders {
@@ -18,6 +19,14 @@
     margin: 0;
     display: block;
     text-align: start;
+}
+
+.preview {
+    cursor:s-resize;
+}
+
+.full {
+    cursor:n-resize;
 }
 
 .commentVotes {

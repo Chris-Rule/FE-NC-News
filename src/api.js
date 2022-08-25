@@ -43,7 +43,7 @@ const updateVotes = (article_id, votes) => {
 };
 
 const postComment = (article_id, username, body) => {
-    return axios.post(`https://cr-nc-news.herokuapp.com/api/articles/${article_id}`,{username,body})
+    return axios.post(`https://cr-nc-news.herokuapp.com/api/articles/${article_id}/comments`,{username,body})
     .then((res)=>{
         return res;
     })

@@ -8,6 +8,7 @@ import PostCommentWindow from './PostCommentWindow';
 
 const SingleArticle = ({setTopic}) => {
     const [articleData, setArticleData] = useState([]);
+    const [sessionPostCount,setSessionPostCount] = useState(0);
     const [postWindowVis, setPostWindowVis] = useState(false);
     const {article_id} = useParams();
 
@@ -36,8 +37,8 @@ const SingleArticle = ({setTopic}) => {
             <Votes article_id= {articleData.article_id} votes = {articleData.votes} />  
         </section>
         {postWindowVis ?   
-        <PostCommentWindow/>: null}
-        <CommentList article_id={article_id}/>     
+        <PostCommentWindow setSessionPostCount={setSessionPostCount} article_id={article_id}/>: null}
+        <CommentList sessionPostCount={sessionPostCount} article_id={article_id}/>     
     </section>
 };
 
