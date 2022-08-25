@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchArticleByID } from '../api';
 import Votes from './Votes';
+import CommentList from './CommentList';
 
 const SingleArticle = ({setTopic}) => {
     const [articleData, setArticleData] = useState([]);
@@ -24,7 +25,8 @@ const SingleArticle = ({setTopic}) => {
         <section className = "articleFooterData">
             <div className ="articleCommentCount">Comment count: {articleData.comment_count}</div>
             <Votes article_id= {articleData.article_id} votes = {articleData.votes} />  
-        </section>           
+        </section>   
+        <CommentList article_id={article_id}/>     
     </section>
 };
 
