@@ -16,6 +16,14 @@ const fetchArticleByID = (article_id) => {
     })
 }
 
+const fetchCommentsByArticleID = (article_id) => {
+    return axios.get(`https://cr-nc-news.herokuapp.com/api/articles/${article_id}/comments`).then((res)=>{
+        return res;
+    }).catch((err) => {
+        console.log(err);
+    })
+}
+
 const fetchAllTopics = () => {
     return axios.get('https://cr-nc-news.herokuapp.com/api/topics').then((res)=>{
         return res;
@@ -35,4 +43,4 @@ const updateVotes = (article_id, votes) => {
 };
 
 
-export { fetchAllArticles, fetchAllTopics, fetchArticleByID, updateVotes };
+export { fetchAllArticles, fetchAllTopics, fetchArticleByID, updateVotes, fetchCommentsByArticleID };
