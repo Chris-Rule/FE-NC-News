@@ -22,7 +22,35 @@
     justify-content: space-around;
     align-content: space-around;
 }
-.articleCommentCount {grid-area: articleCommentCount;}
-.articleCreated{ grid-area: articleCreated;}
-.articleTopic{ grid-area: articleTopic};
-.articleVotes{ grid-area:articleVotes;}
+
+
+.articleCommentCount {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.articleCommentCount p {
+    padding-right: 0.5rem;
+}
+
+.postCommentButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:2rem;
+    width: 4rem;
+}
+
+.upvote {
+    display: flex;
+    align-items: center;
+    fill:green;
+}
+
+.downvote {
+    display: flex;
+    align-content: center;
+    fill: red;
+}

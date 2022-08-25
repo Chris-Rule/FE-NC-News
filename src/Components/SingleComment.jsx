@@ -10,17 +10,21 @@ const SingleComment = ({comment, limitLength, limitThreshold}) => {
         setPreviewActive(!previewActive)
     }
 
-    return (<section key={comment.comment_id} className='commentPanel'>
+    return (<section className='commentPanel'>
             <section className='commentHeaders'>
                 <p>{comment.author}</p>
                 <p>{date}</p>
             </section>{
                 previewActive ? 
-            <p className='commentBody preview' onClick={()=> handleClick()}>{
+         
+                
                 comment.body.length > limitThreshold ?
-                    comment.body.substring(0,limitLength)+"..." :
-                    comment.body
-                }</p>:
+                <p className='commentBody preview' onClick={()=> handleClick()}>
+                    {comment.body.substring(0,limitLength)+"..."} </p>
+                    :
+                    <p className='commentBody'>
+                    {comment.body}</p>
+                :
             <p className='commentBody full' onClick={()=> handleClick()}>{comment.body}</p>
             }
             <p className='commentVotes'>Votes: {comment.votes}</p>
