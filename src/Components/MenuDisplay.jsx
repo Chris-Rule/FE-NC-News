@@ -53,7 +53,6 @@ const MenuDisplay = ({
     }
 
     return <section>
-        Filters
         <section className="filterOptions">
             <button onClick={() => toggleDate()} className={`filter ${dateSort}`}>Date</button>
             <button onClick={() => toggleComments()} className={`filter ${commentSort}`}>Comments</button>

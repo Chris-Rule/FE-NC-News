@@ -1,13 +1,13 @@
 .filter.votes {
-    border: 2px solid green;
+    border: 3px inset rgb(0, 195, 255);
 }
 
 .filter.created_at {
-    border: 2px solid green;
+    border: 3px inset rgb(0, 195, 255);
 }
 
 .filter.comment_count {
-    border: 2px solid green;
+    border: 3px inset rgb(0, 195, 255);
 }
 
 .filterOptions {
@@ -17,6 +17,7 @@
     justify-content: space-around;
     align-content: space-between;
     margin: 0.5rem;
+    margin-top: 0;
 }
 
 .filterOptions button {
@@ -29,4 +30,5 @@
     height:auto;
     width: fit-content;
     font-size: 4vw;
+    border-width: 3px;
 }

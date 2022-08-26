@@ -8,7 +8,7 @@ const MenuBox = ({setDisplayMenu}) => {
         });
     }
 
-    return <button className="menuBox" onClick={() => handleClick()}>Menu</button>
+    return <button className="menuBox" onClick={() => handleClick()}>Filters</button>
 };
 
 export default MenuBox;
