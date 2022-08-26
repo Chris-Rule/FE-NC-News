@@ -53,5 +53,19 @@ const postComment = (article_id, username, body) => {
     })
 }
 
+const deleteComment = (comment_id) => {
+    return axios.delete(`https://cr-nc-news.herokuapp.com/api/comments/${comment_id}`)
+    .then((res)=>{
+        return res;
+    })
+}
 
-export { fetchAllArticles, fetchAllTopics, fetchArticleByID, updateVotes, fetchCommentsByArticleID, postComment };
+
+export { 
+    fetchAllArticles,
+    fetchAllTopics,
+    fetchArticleByID,
+    updateVotes,
+    fetchCommentsByArticleID,
+    postComment,
+    deleteComment };
