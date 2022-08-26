@@ -1,9 +1,14 @@
-import './Component-Style/MenuBox.css'
+import './Component-Style/HeaderBar.css'
 
-const MenuBox = () => {
-    return <section>
-        MenuBox
-    </section>
+const MenuBox = ({setDisplayMenu}) => {
+
+    const handleClick = () => {
+        setDisplayMenu((status) => {
+            return !status;
+        });
+    }
+
+    return <button className="menuBox" onClick={() => handleClick()}>Menu</button>
 };
 
 export default MenuBox;

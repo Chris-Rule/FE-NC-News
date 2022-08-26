@@ -1,9 +1,9 @@
-import './Component-Style/UserBox.css'
+import './Component-Style/HeaderBar.css'
 
 const UserBox = () => {
-    return <section>
-        UserBox
-    </section>
+    return <button className="userBox">
+        User
+    </button>
 };
 
 export default UserBox;

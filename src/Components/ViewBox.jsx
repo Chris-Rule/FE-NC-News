@@ -8,7 +8,12 @@ import { fetchAllTopics } from '../api';
 import SingleArticle from './SingleArticle';
 
 
-const ViewBox = () => {
+const ViewBox = ( {allArticleData,
+     setAllArticleData,
+     dateSort, 
+     commentSort, 
+     voteSort,
+     orderBy}) => {
     const [topic, setTopic] = useState("Showing all topics");
     const [topicData, setTopicData] = useState([]);
     const [topicDDVisible, setTopicDDVisible] = useState(false);
@@ -34,10 +39,28 @@ const ViewBox = () => {
         }
         <Routes>
             <Route path="/articles/:article_id" element={<SingleArticle setTopic={setTopic}/>}></Route>
-            <Route path="/" element={<ArticleList topic='Showing all topics'/>}/>
+            
+            <Route path="/" element={
+            <ArticleList 
+                allArticleData={allArticleData} 
+                setAllArticleData={setAllArticleData} 
+                topic='Showing all topics'
+                dateSort={dateSort} 
+                commentSort={commentSort} 
+                voteSort={voteSort} 
+                orderBy={orderBy}/>}/>
+
             {topicData.map((topic) => {
             return (
-                    <Route key={`/${topic.slug}`} path={`/${topic.slug}`} element={<ArticleList topic={topic.slug}/>}/>    
+                    <Route key={`/${topic.slug}`} path={`/${topic.slug}`} element={
+                        <ArticleList 
+                            allArticleData={allArticleData} 
+                            setAllArticleData={setAllArticleData} 
+                            topic={topic.slug}
+                            dateSort={dateSort} 
+                            commentSort={commentSort} 
+                            voteSort={voteSort} 
+                            orderBy={orderBy}/>}/>    
             )
         })}
         </Routes>

@@ -6,18 +6,32 @@ import Votes from './Votes';
 import dayjs from 'dayjs';
 
 
-const ArticleList = ({topic}) => {
-    const [allArticleData, setAllArticleData] = useState([]);
+const ArticleList = ({topic,
+    allArticleData, 
+    setAllArticleData,
+    dateSort, 
+    commentSort, 
+    voteSort,
+    orderBy}) => {
 
     useEffect(() => {
         let topicValue = topic;
+
         if(topicValue === "Showing all topics"){
             topicValue = null;
         }
-        fetchAllArticles(topicValue).then(({data}) => {
+
+        const sortValues = [dateSort,commentSort,voteSort];
+
+        const activeValues = sortValues.filter(value => value);
+
+        const sortBy = activeValues.join(",");
+
+        fetchAllArticles(topicValue,sortBy,orderBy).then(({data}) => {
+            console.log("refreshing articles");
             setAllArticleData(data.articles);
         })
-    }, [topic]);
+    }, [dateSort, commentSort, voteSort, orderBy, topic]);
 
     return <>
         <ul>

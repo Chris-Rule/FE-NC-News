@@ -3,17 +3,50 @@ header {
     flex-direction: row;
     width: 90vw;
     justify-content: space-between;
+    margin-top: 0.5rem;
 }
 
-h1 {
+.userBox {
     margin: 0;
+    background: 
+    linear-gradient(to bottom right, rgb(0, 149, 255,0.5), rgba(0, 0, 0, 0.1));
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px black;
+    padding: 1rem;
+    height:auto;
+    width: fit-content;
+    font-size: 6vw;
+
+}
+
+.menuBox {
+    margin: 0;
+    background: 
+    linear-gradient(to bottom right, rgb(0, 149, 255,0.5), rgba(0, 0, 0, 0.1));
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px black;
+    padding: 1rem;
+    height:auto;
+    width: fit-content;
+    font-size: 6vw;
 }
 
 header * {
     display: flex;
     padding: 0.5rem;
-    height: 10vh;
+    height: 7.5vh;
     align-items: center;
     text-align: center;
-    border: 2px solid red;
+}
+
+h1 {
+    margin: 0;
+    font-size: 9vw;
+    background: 
+    linear-gradient(to bottom right, rgb(0, 149, 255,0.5), rgba(0, 0, 0, 0.1));
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px black;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width:fit-content;
 }

@@ -1,15 +1,22 @@
 .TopicBar {
-    border: 2px solid blue;
     text-transform: capitalize;
     display: flex;
     flex-direction: row;
     width: 89.5vw;
     justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    margin: 0;
+    background: 
+    linear-gradient(to bottom right, rgb(0, 149, 255,0.5), rgba(0, 0, 0, 0.1));
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px black;
+    height:auto;
 }
 
-h2 {
+.currentTopic {
     display: block;
-    font-size: 1.2rem;
+    font-size: 7.5vw;
     margin: 0.5rem;
     margin-left: 1rem;
     padding: 0;
@@ -17,11 +24,18 @@ h2 {
 
 .TopicBar .changeTopic{
     display: flex;
-    padding: 0.5rem;
     text-align: center;
     justify-content: center;
     align-content: center;
     justify-items: center;
     align-items: center;
-    border: 2px solid red;
+    font-size: 5vw;
+
+    margin: 0.3rem;
+    background: 
+    linear-gradient(to bottom right, rgb(0, 149, 255,0.5), rgba(0, 0, 0, 0.1));
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px black;
+    padding: 0.5rem;
+    height:auto;
 }
