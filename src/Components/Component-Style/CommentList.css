@@ -37,7 +37,22 @@
     cursor:n-resize;
 }
 
-.commentVotes {
+.commentFooters{
     display:flex;
-    justify-content: end;
+    justify-content: space-between;
+}
+
+button.delete {
+    background-color: red;
+}
+
+section.disabled {
+    color: grey;
+    background: 
+    linear-gradient(to bottom right, rgba(255, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+}
+
+button.delete:disabled {
+    color: grey;
+    background-color: rgb(135, 7, 7);
 }
