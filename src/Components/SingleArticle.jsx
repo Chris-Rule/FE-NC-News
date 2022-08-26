@@ -15,11 +15,18 @@ const SingleArticle = ({setTopic}) => {
     const {article_id} = useParams();
 
     useEffect(() => {
-        fetchArticleByID(article_id).then(({data}) => {
-            setTopic(data.article.topic);
-            setArticleData(data.article);
+        fetchArticleByID(article_id).then((res) => {
+            if("data" in res){
+                const data = res.data;
+                setTopic(data.article.topic);
+                setArticleData(data.article);
+            } else if (res.name === "AxiosError"){
+                return setError({res})
+            } else {
+                console.log("Error");
+            }
         }).catch((err) => {
-            setError({err});
+            return setError({err});
         })
     },[])
 

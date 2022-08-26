@@ -12,6 +12,8 @@ const Votes = ({article_id, votes}) => {
         if(article_id){
             fetchArticleByID(article_id).then(({data}) => {
                 setDisplayVotes(data.article.votes);
+            }).catch((err) => {
+                console.log(err);
             })
         }
     },[err, votes])
