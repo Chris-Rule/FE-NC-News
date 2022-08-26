@@ -16,13 +16,11 @@ const SingleComment = ({comment, limitLength, limitThreshold}) => {
     }
 
     const handleDelete = () => {
-        console.log("handling delete");
         setCommentDeleted("disabled");
         deleteComment(comment.comment_id).then(() => {
             console.log("delete succesful - disabling panel");
         }).catch(() => {
             setCommentDeleted("");
-            console.log("failed to delete comment");
         });
     }
     
