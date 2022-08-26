@@ -5,15 +5,42 @@ import MenuDisplay from './Components/MenuDisplay';
 import LoginDropdown from './Components/LoginDropdown';
 import { BrowserRouter} from 'react-router-dom';
 import ViewBox from './Components/ViewBox';
+import { useState } from 'react';
 
 function App() {
+  const [displayMenu, setDisplayMenu] = useState(false);
+  const [allArticleData, setAllArticleData] = useState([]);
+  const [dateSort, setDateSort] = useState("created_at");
+  const [commentSort, setCommentSort] = useState("");
+  const [voteSort, setVoteSort] = useState("");
+  const [orderBy, setOrderBy] = useState('desc');
+
   return (
     <BrowserRouter>
       <div className="App">
-        <HeaderBar/>
+        <HeaderBar 
+          setDisplayMenu={setDisplayMenu} 
+        />
+
         <LoginDropdown/>
-        <MenuDisplay/>
-        <ViewBox/>
+        {displayMenu? <MenuDisplay 
+          dateSort={dateSort}
+          setDateSort={setDateSort} 
+          commentSort={commentSort}
+          setCommentSort={setCommentSort}
+          voteSort={voteSort} 
+          setVoteSort={setVoteSort} 
+          orderBy={orderBy}
+          setOrderBy={setOrderBy} /> : null}
+
+        <ViewBox 
+          allArticleData={allArticleData} 
+          setAllArticleData={setAllArticleData}
+          dateSort={dateSort} 
+          commentSort={commentSort} 
+          voteSort={voteSort} 
+          orderBy={orderBy}/>
+
         <Explore/>
       </div>
     </BrowserRouter>

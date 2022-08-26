@@ -1,13 +1,33 @@
 .App {
   text-align: center;
+  text-shadow: 2px 2px 2px black;
   display: flex;
   flex-direction: column;
   justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
-  background-image: linear-gradient(to bottom right,rgb(7, 65, 142), rgb(9, 9, 90),black);
+  background-image: linear-gradient(to bottom right,rgb(7, 65, 142,0.9), rgb(9, 9, 90,0.9),black),
+  url(https://www.zotefoams.com/wp-content/uploads/2015/08/global-presence-resized.jpg);
+  background-size: cover, 100vh;
   color: white;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+button {
+  text-shadow: 2px 2px 2px black;
+  font-family: inherit;
+  color: white;
+  margin: 0;
+    background: 
+    linear-gradient(to bottom right, rgb(0, 149, 255,0.5), rgba(0, 0, 0, 0.1));
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px black;
+    height:auto;
+}
+
+p {
+  text-shadow: 1px 1px 1px black;
 }
 
 .pageContainer{

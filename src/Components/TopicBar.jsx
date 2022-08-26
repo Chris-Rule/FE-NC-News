@@ -9,12 +9,12 @@ const TopicBar = ({topic,topicDDVisible, setTopicDDVisible}) => {
     }
 
     return <section className='TopicBar'>
-        <h2>
+        <h2 className="currentTopic">
         {topic} 
         </h2>
-        <div className='changeTopic' onClick={handleClick}>
+        <button className='changeTopic' onClick={handleClick}>
             {topicDDVisible ? "Close" : "New Topic"}
-        </div>
+        </button>
     </section>
 };
 

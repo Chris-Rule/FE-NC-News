@@ -1,7 +1,11 @@
 import axios from "axios";
 
-const fetchAllArticles = (topic) => {
-    return axios.get('https://cr-nc-news.herokuapp.com/api/articles',{params:{sortBy: null,order: null,topic}}).then((res)=>{
+const fetchAllArticles = (topic, sort_by = null, order = null) => {
+    if(sort_by === ''){
+        sort_by =null;
+    }
+    return axios.get('https://cr-nc-news.herokuapp.com/api/articles',{params:{sort_by,order,topic}}).then((res)=>{
+        console.log(res);
         return res;
     }).catch((err) => {
         console.log(err);
