@@ -5,10 +5,9 @@ const fetchAllArticles = (topic, sort_by = null, order = null) => {
         sort_by =null;
     }
     return axios.get('https://cr-nc-news.herokuapp.com/api/articles',{params:{sort_by,order,topic}}).then((res)=>{
-        console.log(res);
         return res;
     }).catch((err) => {
-        console.log(err);
+        return err;
     })
 }
 
@@ -16,15 +15,16 @@ const fetchArticleByID = (article_id) => {
     return axios.get(`https://cr-nc-news.herokuapp.com/api/articles/${article_id}`).then((res)=>{
         return res;
     }).catch((err) => {
-        console.log(err);
+        return err;
     })
+    
 }
 
 const fetchCommentsByArticleID = (article_id) => {
     return axios.get(`https://cr-nc-news.herokuapp.com/api/articles/${article_id}/comments`).then((res)=>{
         return res;
     }).catch((err) => {
-        console.log(err);
+        return err;
     })
 }
 
@@ -32,7 +32,7 @@ const fetchAllTopics = () => {
     return axios.get('https://cr-nc-news.herokuapp.com/api/topics').then((res)=>{
         return res;
     }).catch((err) => {
-        console.log(err);
+        return err;
     })
 }
 

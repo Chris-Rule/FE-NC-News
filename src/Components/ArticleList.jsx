@@ -28,7 +28,6 @@ const ArticleList = ({topic,
         const sortBy = activeValues.join(",");
 
         fetchAllArticles(topicValue,sortBy,orderBy).then(({data}) => {
-            console.log("refreshing articles");
             setAllArticleData(data.articles);
         })
     }, [dateSort, commentSort, voteSort, orderBy, topic]);

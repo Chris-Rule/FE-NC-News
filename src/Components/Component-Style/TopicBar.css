@@ -12,6 +12,7 @@
     border-radius: 0.5rem;
     box-shadow: 2px 2px 2px black;
     height:auto;
+    margin-bottom: 0;
 }
 
 .currentTopic {

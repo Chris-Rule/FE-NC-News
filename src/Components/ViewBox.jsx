@@ -6,6 +6,7 @@ import ArticleList from './ArticleList';
 import { Routes, Route } from 'react-router-dom'
 import { fetchAllTopics } from '../api';
 import SingleArticle from './SingleArticle';
+import NoPageFound from './NoPageFound';
 
 
 const ViewBox = ( {allArticleData,
@@ -24,7 +25,7 @@ const ViewBox = ( {allArticleData,
         })
     }, [topic,topicDDVisible])
 
-    return <>
+    return <section className="viewBox">
         <TopicBar   topic={topic} 
                     topicDDVisible={topicDDVisible}
                     setTopicDDVisible={setTopicDDVisible}
@@ -63,8 +64,9 @@ const ViewBox = ( {allArticleData,
                             orderBy={orderBy}/>}/>    
             )
         })}
+            <Route path="*" element={<NoPageFound />} />
         </Routes>
-    </>
+    </section>
 };
 
 export default ViewBox;

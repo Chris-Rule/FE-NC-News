@@ -18,7 +18,6 @@ const MenuDisplay = ({
                 return current === "created_at" ? "" : "created_at";
             })
         }
-        console.log(dateSort,commentSort,voteSort,orderBy);
     }
 
     const toggleComments = () => {
@@ -30,7 +29,6 @@ const MenuDisplay = ({
             setDateSort("created_at");
             setCommentSort("");
         }
-        console.log(dateSort,commentSort,voteSort,orderBy);
     }
     
     const toggleVotes = () => {
@@ -42,14 +40,12 @@ const MenuDisplay = ({
             setDateSort("created_at");
             setVoteSort("");
         }
-        console.log(dateSort,commentSort,voteSort,orderBy);
     }
 
     const switchOrder = () => {
         setOrderBy((currentOrder) => {
             return currentOrder === "desc" ? "asc" : "desc";
         })
-        console.log(dateSort,commentSort,voteSort,orderBy);
     }
 
     return <section>

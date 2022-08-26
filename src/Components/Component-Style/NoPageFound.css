@@ -1,0 +1,21 @@
+.homeLink {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    font-size: 5vw;
+
+    margin: 0.3rem;
+    background: 
+    linear-gradient(to bottom right, rgb(0, 149, 255,0.5), rgba(0, 0, 0, 0.1));
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 2px black;
+    padding: 0.5rem;
+    height:auto;
+}
+
+.homeLink:visited {
+    color: white;
+}

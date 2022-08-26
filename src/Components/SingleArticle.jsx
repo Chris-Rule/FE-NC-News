@@ -5,20 +5,34 @@ import { fetchArticleByID } from '../api';
 import Votes from './Votes';
 import CommentList from './CommentList';
 import PostCommentWindow from './PostCommentWindow';
+import ErrorPage from './ErrorPage';
 
 const SingleArticle = ({setTopic}) => {
     const [articleData, setArticleData] = useState([]);
     const [sessionPostCount,setSessionPostCount] = useState(0);
     const [postWindowVis, setPostWindowVis] = useState(false);
+    const [error,setError] = useState(null);
     const {article_id} = useParams();
 
-
     useEffect(() => {
-        fetchArticleByID(article_id).then(({data}) => {
-            setTopic(data.article.topic);
-            setArticleData(data.article);
+        fetchArticleByID(article_id).then((res) => {
+            if("data" in res){
+                const data = res.data;
+                setTopic(data.article.topic);
+                setArticleData(data.article);
+            } else if (res.name === "AxiosError"){
+                return setError({res})
+            } else {
+                console.log("Error");
+            }
+        }).catch((err) => {
+            return setError({err});
         })
     },[])
+
+    if(error) {
+        return <ErrorPage setTopic={setTopic} message={error}/>
+    }
 
     const handleClick = () => {
         setPostWindowVis(!postWindowVis)

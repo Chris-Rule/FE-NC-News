@@ -11,6 +11,7 @@ header {
     display: flex;
     flex-direction: column;
     margin: 0;
+    justify-content: center;
     background: 
     linear-gradient(to bottom right, rgb(0, 149, 255,0.5), rgba(0, 0, 0, 0.1));
     border-radius: 0.5rem;
@@ -43,7 +44,7 @@ header * {
 }
 
 h1 {
-    flex-grow: 0.5;
+    flex-grow: 1;
     margin: 0;
     font-size: 9vw;
     background: 
@@ -55,6 +56,9 @@ h1 {
     padding-right: 1.5rem;
     width:fit-content;
     height: auto;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
 }
 
 .userBox p {
