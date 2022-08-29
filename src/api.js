@@ -1,10 +1,17 @@
 import axios from "axios";
 
+const Client = axios.create(
+    {
+        baseURL:'https://cr-nc-news.herokuapp.com/',
+        timeout:5000
+    }
+)
+
 const fetchAllArticles = (topic, sort_by = null, order = null) => {
     if(sort_by === ''){
         sort_by =null;
     }
-    return axios.get('https://cr-nc-news.herokuapp.com/api/articles',{params:{sort_by,order,topic}}).then((res)=>{
+    return Client.get('/api/articles',{params:{sort_by,order,topic}}).then((res)=>{
         return res;
     }).catch((err) => {
         return err;
@@ -12,7 +19,7 @@ const fetchAllArticles = (topic, sort_by = null, order = null) => {
 }
 
 const fetchArticleByID = (article_id) => {
-    return axios.get(`https://cr-nc-news.herokuapp.com/api/articles/${article_id}`).then((res)=>{
+    return Client.get(`/api/articles/${article_id}`).then((res)=>{
         return res;
     }).catch((err) => {
         return err;
@@ -21,7 +28,7 @@ const fetchArticleByID = (article_id) => {
 }
 
 const fetchCommentsByArticleID = (article_id) => {
-    return axios.get(`https://cr-nc-news.herokuapp.com/api/articles/${article_id}/comments`).then((res)=>{
+    return Client.get(`/api/articles/${article_id}/comments`).then((res)=>{
         return res;
     }).catch((err) => {
         return err;
@@ -29,7 +36,7 @@ const fetchCommentsByArticleID = (article_id) => {
 }
 
 const fetchAllTopics = () => {
-    return axios.get('https://cr-nc-news.herokuapp.com/api/topics').then((res)=>{
+    return Client.get('/api/topics').then((res)=>{
         return res;
     }).catch((err) => {
         return err;
@@ -37,7 +44,7 @@ const fetchAllTopics = () => {
 }
 
 const updateVotes = (article_id, votes) => {
-    return axios.patch(`https://cr-nc-news.herokuapp.com/api/articles/${article_id}`,
+    return Client.patch(`/api/articles/${article_id}`,
     {
         inc_votes: votes
     }
@@ -47,14 +54,14 @@ const updateVotes = (article_id, votes) => {
 };
 
 const postComment = (article_id, username, body) => {
-    return axios.post(`https://cr-nc-news.herokuapp.com/api/articles/${article_id}/comments`,{username,body})
+    return Client.post(`/api/articles/${article_id}/comments`,{username,body})
     .then((res)=>{
         return res;
     })
 }
 
 const deleteComment = (comment_id) => {
-    return axios.delete(`https://cr-nc-news.herokuapp.com/api/comments/${comment_id}`)
+    return Client.delete(`/api/comments/${comment_id}`)
     .then((res)=>{
         return res;
     })
