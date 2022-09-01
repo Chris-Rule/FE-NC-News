@@ -5,7 +5,7 @@ import MenuDisplay from './Components/MenuDisplay';
 import LoginDropdown from './Components/LoginDropdown';
 import { BrowserRouter} from 'react-router-dom';
 import ViewBox from './Components/ViewBox';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import {UserContext} from './Contexts/userContext';
 
 function App() {
@@ -18,7 +18,11 @@ function App() {
   const [orderBy, setOrderBy] = useState('desc');
   const [viewLogin, setViewLogin] = useState(false);
   //contexts
-  const [activeUser, setActiveUser] = useState('Grumpy19');
+  const [activeUser, setActiveUser] = useState({
+    username:'default',
+    name:'defaultName',
+    avatar_url:'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'
+  });
 
   return (
     <UserContext.Provider value={{activeUser,setActiveUser}}>

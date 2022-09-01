@@ -12,7 +12,7 @@ const UserBox = ({setViewLogin}) => {
     }
 
     return <button className="userBox" onClick={() => handleClick()}>
-       <p>User:</p>  <sub>{activeUser}</sub>
+       <img src={activeUser.avatar_url}/>
     </button>
 };
 

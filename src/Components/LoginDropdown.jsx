@@ -1,10 +1,12 @@
-import { useEffect } from 'react';
 import { fetchAllUsers } from '../api';
 import './Component-Style/LoginDropdown.css'
-import { useState } from 'react';
+import { useState,useEffect,useContext } from 'react';
+import { UserContext } from '../Contexts/userContext';
+
 
 const LoginDropdown = ({viewLogin, setViewLogin}) => {
-    const [validUsers,setValidUsers] = useState([])
+    const [validUsers,setValidUsers] = useState([]);
+    const {activeUser, setActiveUser} = useContext(UserContext);
 
     useEffect(()=>{
         fetchAllUsers().then(({data}) => {
@@ -12,8 +14,9 @@ const LoginDropdown = ({viewLogin, setViewLogin}) => {
         });
     },[])
     
-    const handleClick = (event) => {
-        console.log(event);
+    const handleClick = (user) => {
+        setViewLogin(false);
+        setActiveUser(user);
     }
     
     return (
@@ -21,7 +24,7 @@ const LoginDropdown = ({viewLogin, setViewLogin}) => {
             <ul className='userList'>
                 {validUsers.map((user) => {
                     return (
-                        <section onClick={() => handleClick(user.username)}className='userPanel'>
+                        <section onClick={() => handleClick(user)}className='userPanel'>
                             <p>{user.name}</p>
                             <img src={user.avatar_url}/>
                         </section>

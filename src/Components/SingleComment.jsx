@@ -43,7 +43,7 @@ const SingleComment = ({comment, limitLength, limitThreshold}) => {
             <p className='commentBody full' onClick={()=> handleClick()}>{comment.body}</p>
             }
             <section className = "commentFooters">
-                <p>{comment.author.toUpperCase() == activeUser.toUpperCase() ? 
+                <p>{comment.author.toUpperCase() == activeUser.username.toUpperCase() ? 
                     <button className ="delete" onClick={() => {handleDelete()}} disabled={commentDeleted} >Delete</button> : null}</p>
                 <p className='commentVotes'>Votes: {comment.votes}</p>
             </section>
