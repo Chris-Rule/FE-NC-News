@@ -14,8 +14,7 @@ This project will provide the front end interfance for a news style website. The
 ### Project Links
 
 Front End: https://nc-news-cr.netlify.app/
-Front End Beta: https://6308d824069def2d9e33bb70--nc-news-cr.netlify.app/coding
-Repo: https://github.com/Chris-Rule/nc-news
+Repo: https://github.com/Chris-Rule/FE-NC-News
 
 Back End: https://cr-nc-news.herokuapp.com/
 Repo: https://github.com/Chris-Rule/BE-NC-News
