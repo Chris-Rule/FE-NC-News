@@ -1,4 +1,4 @@
-.App {
+div.App {
   text-align: center;
   text-shadow: 2px 2px 2px black;
   height:1fr;
@@ -8,6 +8,7 @@
   justify-items: center;
   align-items: center;
   align-content: center;
+  width:100%;
   background-image: linear-gradient(to bottom right,rgb(7, 65, 142,0.9), rgb(9, 9, 90,0.9),black),
   url(https://www.zotefoams.com/wp-content/uploads/2015/08/global-presence-resized.jpg);
   background-size: cover, 100vh;

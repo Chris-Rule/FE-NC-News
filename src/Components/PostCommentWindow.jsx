@@ -1,10 +1,12 @@
 import { postComment } from '../api';
 import './Component-Style/PostCommentWindow.css'
-import { useState } from 'react';
+import { useState,useContext } from 'react';
+import { UserContext } from '../Contexts/userContext';
 
 const PostCommentWindow = ({article_id, setSessionPostCount}) => {
     const [infoMessage, setInfoMessage] = useState("");
     const [formDisabled, setFormDisabled] = useState("");
+    const {activeUser} = useContext(UserContext); 
 
     const handleSubmit = (event) => {
         setFormDisabled("disabled");
@@ -16,7 +18,7 @@ const PostCommentWindow = ({article_id, setSessionPostCount}) => {
             setInfoMessage(`Posts must be at least ${minPostLength} characters long.`);
         } else {
             setInfoMessage("Posting.....");
-            postComment(article_id,"grumpy19",commentBody).then((res)=> {
+            postComment(article_id,activeUser.username,commentBody).then((res)=> {
                 setSessionPostCount((postCount) => {
                     return postCount + 1;
                 })

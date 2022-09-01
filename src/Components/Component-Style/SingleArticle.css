@@ -3,8 +3,26 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
+    width: 88vw;
+    padding: 0%;
+}
+
+.articleBox ul {
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    list-style-type: none;
+    list-style: none;
     width: 90vw;
     padding: 0%;
+    margin-top: 0.1rem;
+}
+
+h3.articleTitle {
+    margin: 0.5rem;
+    margin-left: 0;
+    margin-right:0;
 }
 
 .articleAuthor { 
@@ -13,6 +31,8 @@
 }
 
 .articleBody {
+    font-size: 1.2rem;
+    font-style: italic;
     text-align: start;
 }
 

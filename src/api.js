@@ -67,6 +67,14 @@ const deleteComment = (comment_id) => {
     })
 }
 
+const fetchAllUsers = () => {
+    return Client.get('/api/users').then((res)=>{
+        return res;
+    }).catch((err) => {
+        return err;
+    })
+}
+
 
 export { 
     fetchAllArticles,
@@ -75,4 +83,5 @@ export {
     updateVotes,
     fetchCommentsByArticleID,
     postComment,
-    deleteComment };
+    deleteComment,
+    fetchAllUsers };

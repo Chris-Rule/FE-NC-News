@@ -1,4 +1,4 @@
-ul {
+ul.articleGrid {
     display: grid;
     text-align: center;
     justify-content: center;
@@ -10,43 +10,86 @@ ul {
     margin-top: 0.1rem;
 }
 
-p {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
 .articlePanel {
     margin-top: 0.5em;
     background: 
     linear-gradient(to bottom right, rgb(0, 149, 255,0.5), rgba(0, 0, 0, 0.1));
-    border-style: none none none double;
-    border-width: 3px;
-    border-color: white;
-    border-radius: 0 0.5rem 0.5rem 0;
+    border-radius: 0.5rem;
     box-shadow: 2px 2px 2px black;
     padding: 1rem;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    width: 1fr;
     gap: 0.5em;
-    grid-template-areas: 
-    'articleTitle articleTitle articleTitle'
-    'articleAuthor articleTopic articleVotes'
-    'articleCreated articleCreated articleCommentCount'
-    ;
+    justify-content: start;
+    padding-bottom: 0;
 }
 
+.articleCreated {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+.articlePanel .articleHeaders {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.articleComment {
+    text-align: end;
+    margin: 0;
+    padding-bottom: 0.75rem;
+}
+
+
+.articlePanel .articleFooters {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content:center;
+    margin: 0;
+    padding: 0;
+}
+
+.votes {
+    padding-bottom: 0;
+}
+
+.votes p{
+    margin: 0;
+}
+
+
 .articleTitle {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
     color:white;
+    text-align: left;
 }
 
 .articleTitle:visited {
     color:grey;
 }
 
-.articleTitle { grid-area: articleTitle; }
-.articleAuthor { grid-area: articleAuthor;}
-.articleCommentCount {grid-area: articleCommentCount;}
-.articleCreated{ grid-area: articleCreated;}
-.articleTopic{ grid-area: articleTopic};
-.articleVotes{ grid-area:articleVotes;}
+.articleAuthor { 
+    padding: 0;
+    margin: 0;
+}
+
+.articleTopic{
+    display: flex;
+    text-transform: capitalize;
+    font-size: 2rem;
+    color: rgb(0, 149, 255,0.9);
+    padding: 0;
+    margin: 0;
+};
+
+

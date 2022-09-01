@@ -1,17 +1,28 @@
+ul.commentList {
+    list-style-type: none;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+}
+
+
 .commentPanel {
     display: flex;
     flex-direction: column;
+    width:90%;
     margin-top: 0.5rem;
+    margin-left: 0;
     padding-left: 1rem;
     padding-right: 1rem;
-    width: 80vw;
     margin-top: 0.5em;
     background: 
     linear-gradient(to bottom right, rgb(0, 149, 255,0.5), rgba(0, 0, 0, 0.1));
-    border-style: none none none double;
-    border-width: 3px;
-    border-color: white;
-    border-radius: 0 1rem 1rem 0;
+    border-radius: 1rem;
     box-shadow: 2px 2px 2px black;
     display: grid;
 }
@@ -55,4 +66,8 @@ section.disabled {
 button.delete:disabled {
     color: grey;
     background-color: rgb(135, 7, 7);
+}
+
+p .commentVotes {
+    background-color: red;
 }
