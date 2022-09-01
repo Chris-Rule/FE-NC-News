@@ -16,6 +16,7 @@ function App() {
   const [commentSort, setCommentSort] = useState("");
   const [voteSort, setVoteSort] = useState("");
   const [orderBy, setOrderBy] = useState('desc');
+  const [viewLogin, setViewLogin] = useState(false);
   //contexts
   const [activeUser, setActiveUser] = useState('Grumpy19');
 
@@ -25,9 +26,9 @@ function App() {
         <div className="App">
           <HeaderBar 
             setDisplayMenu={setDisplayMenu} 
+            setViewLogin={setViewLogin}
           />
-
-          <LoginDropdown/>
+          <LoginDropdown viewLogin={viewLogin} setViewLogin={setViewLogin}/>
           {displayMenu? <MenuDisplay 
             dateSort={dateSort}
             setDateSort={setDateSort} 

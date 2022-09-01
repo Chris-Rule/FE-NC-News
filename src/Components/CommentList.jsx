@@ -26,7 +26,7 @@ const CommentList = ({article_id, setTopic, sessionPostCount}) => {
     const limitThreshold = 100;
     const limitLength = 75;
 
-    return <ul>
+    return <ul className='commentList'>
     {commentList.map((comment) => {
         return <SingleComment key={comment.comment_id} comment={comment} limitLength={limitLength} limitThreshold={limitThreshold}/>
     })}

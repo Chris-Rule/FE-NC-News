@@ -11,13 +11,13 @@ const TopicDropdown = ({setTopic, topicData, setTopicDDVisible}) => {
 
     return <>
         <ul className='topicDropDown'>
-            <li>
-                <Link to={`/`} onClick={() => {setTopic("Showing all topics")}}>Show All Topics</Link>
+            <li onClick={() => {setTopic("Showing all topics")}}>
+                <Link to={`/`} >Show All Topics</Link>
             </li>
         {topicData.map((topic) => {
             return (
-                <li key={topic.slug}>
-                    <Link to={`${topic.slug}`} onClick={() => {handleClick(topic)}}>{topic.slug}</Link>
+                <li key={topic.slug} onClick={() => {handleClick(topic)}}>
+                    <Link to={`${topic.slug}`} >{topic.slug}</Link>
                     </li>
             )
         })}
